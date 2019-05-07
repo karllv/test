@@ -15,6 +15,7 @@ import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -59,7 +60,7 @@ public class MyAspect {
 
         String token = paramMap.get("token");
         if (!"666".equals(token)) {
-            throw new Exception("请登录");
+            throw new MyException("20001", "请登录", (Throwable)null);
         }
 
 
